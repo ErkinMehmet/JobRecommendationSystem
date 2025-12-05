@@ -17,12 +17,12 @@ def main():
         with st.spinner("Finding skill gaps"):
             gaps=ask_openai(f"Analyze this resume and highlight missing skills, certifications, and experiences needed for better job opportunities:\n\n{cv_summary}",max_tokens=400)
         with st.spinner("Creating Future Roadmap..."):
-            roadmap = ask_openai(f"Based on this resume, suggest a future roadmap to improve this person's career prospects (Skill to learn, certification needed, industry exposure): \n\n{resume_text}", max_tokens=400)
+            roadmap = ask_openai(f"Based on this resume, suggest a future roadmap to improve this person's career prospects (Skill to learn, certification needed, industry exposure): \n\n{cv_text}", max_tokens=400)
         
         # display nicely formatted results
         st.markdown("---")
         st.header("📑 Resume Summary")
-        st.markdown(f"<div style='background-color: #000000; padding: 15px; border-radius: 10px; font-size:16px; color:white;'>{summary}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div style='background-color: #000000; padding: 15px; border-radius: 10px; font-size:16px; color:white;'>{cv_summary}</div>", unsafe_allow_html=True)
 
         st.markdown("---")
         st.header("🛠️ Skill Gaps & Missing Areas")
